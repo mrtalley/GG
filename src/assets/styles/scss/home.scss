@@ -1,0 +1,47 @@
+body {
+  all: unset;
+  font-family: ambroise-firmin-std-light, serif;
+}
+
+.home-container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.responsive-image {
+  max-width: 100%;
+}
+
+.cell img {
+  display: block;
+}
+
+.cell {
+  margin: 2rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex: {
+      wrap: wrap;
+      direction: row;
+    }
+  }
+
+  .cell {
+    width: calc(50% - 4rem);
+  }
+}
+
+// @media screen and (min-width: 1000px) {
+//   .cell {
+//     width: calc(calc(100% / 3) - 2rem);
+//   }
+// }
