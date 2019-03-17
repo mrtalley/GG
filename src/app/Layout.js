@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import Header from './layout/Header';
-import Site from './layout/Site';
 import Router from './layout/Router';
 
 const Layout = () => (

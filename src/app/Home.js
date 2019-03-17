@@ -6,36 +6,41 @@ import '../assets/styles/scss/home.scss';
 // import image assets here
 import monoprintCrowd from '../assets/images/monoprint-crowd.JPG';
 
+// create photo list mirrored off the code below
+
+// think about creating some sort of error telling the user to refresh
+// page if the photos don't load or don't load properly
+
 const Home = () => (
-    <div class="home-container">
-        <div class="grid">
-            <div class="cell">
-                <img data-src={monoprintCrowd} class='responsive-image lozad' alt='greendetail' />
-                <div class="subtitle">
+    <div className="home-container">
+        <div className="grid">
+            <div className="cell">
+                <img src={monoprintCrowd} className='responsive-image lozad' alt='greendetail' />
+                <div className="subtitle">
                     Boaties
                 </div>
             </div>
-            <div class="cell">
-                <img data-src={monoprintCrowd} class="responsive-image lozad" />
-                <div class="subtitle">
+            <div className="cell">
+                <img src={monoprintCrowd} className="responsive-image lozad" />
+                <div className="subtitle">
                     Glass Triangle
                 </div>
             </div>
-            <div class="cell">
-                <img data-src={monoprintCrowd} class="responsive-image lozad" />
-                <div class="subtitle">
+            <div className="cell">
+                <img src={monoprintCrowd} className="responsive-image lozad" />
+                <div className="subtitle">
                     Linez m8
                 </div>
             </div>
-            <div class="cell">
-                <img data-src={monoprintCrowd} class="responsive-image lozad" />
-                <div class="subtitle">
+            <div className="cell">
+                <img src={monoprintCrowd} className="responsive-image lozad" />
+                <div className="subtitle">
                     Imposing houses
                 </div>
             </div>
-            <div class="cell">
-                <img data-src={monoprintCrowd} class="responsive-image lozad" />
-                <div class="subtitle">
+            <div className="cell">
+                <img src={monoprintCrowd} className="responsive-image lozad" />
+                <div className="subtitle">
                     Mirror
                 </div>
             </div>
