@@ -1,51 +1,37 @@
 import React from 'react';
+import PhotoGrid from './layout/PhotoGrid';
+import { flamelinkInstance } from '../global.js';
 
-// import style assets here
+// Styles
 import '../assets/styles/scss/home.scss';
 
-// import image assets here
-import monoprintCrowd from '../assets/images/monoprint-crowd.JPG';
+// Header Section Images
+import initials from '../assets/images/gg-logo-nopadding.svg';
+import fullName from '../assets/images/full-name-logo-nopadding.svg';
 
-// create photo list mirrored off the code below
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { images: [] };
 
-// think about creating some sort of error telling the user to refresh
-// page if the photos don't load or don't load properly
+        flamelinkInstance.content.get('images')
+            .then(images => {
+                this.setState({ images: images });
+            })
+            .catch(error => console.log('something bad happened :-(\n', error));
+    }
 
-const Home = () => (
-    <div className="home-container">
-        <div className="grid">
-            <div className="cell">
-                <img src={monoprintCrowd} className='responsive-image lozad' alt='greendetail' />
-                <div className="subtitle">
-                    Boaties
+    render() {
+            return this.state.images.length !== 0 ? (
+                <div className="home-container">
+                    <div className="home-header-container">
+                        <img src={initials} className="initials-logo" alt="Initials Logo" />
+                        <img src={fullName} className="full-name-logo" alt="Full Name Logo" />
+                    </div>
+                    <PhotoGrid images={this.state.images} />
                 </div>
-            </div>
-            <div className="cell">
-                <img src={monoprintCrowd} className="responsive-image lozad" />
-                <div className="subtitle">
-                    Glass Triangle
-                </div>
-            </div>
-            <div className="cell">
-                <img src={monoprintCrowd} className="responsive-image lozad" />
-                <div className="subtitle">
-                    Linez m8
-                </div>
-            </div>
-            <div className="cell">
-                <img src={monoprintCrowd} className="responsive-image lozad" />
-                <div className="subtitle">
-                    Imposing houses
-                </div>
-            </div>
-            <div className="cell">
-                <img src={monoprintCrowd} className="responsive-image lozad" />
-                <div className="subtitle">
-                    Mirror
-                </div>
-            </div>
-        </div>
-    </div>
-);
+            ) : <div>Loading images...</div>;
+    }
+}
 
 export default Home;
