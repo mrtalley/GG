@@ -20,17 +20,17 @@ class Header extends React.Component {
                         </NavLink>
                     </div>
                     <div className="nav-elt">
-                        <NavLink to='/graphic-design'>
+                        <NavLink to='/graphicdesign'>
                             Graphic Design
                         </NavLink>
                     </div>
                     <div className="nav-elt">
-                        <NavLink to='/fine-arts'>
+                        <NavLink to='/finearts'>
                             Fine Arts
                         </NavLink>
                     </div>
                     <div className="nav-elt">
-                        <a href="https://www.instagram.com/free2be_g/">
+                        <a target="_blank" href="https://www.instagram.com/free2be_g/">
                             Instagram
                         </a>
                     </div>
