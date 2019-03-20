@@ -4,19 +4,23 @@ import Helmet from 'react-helmet';
 import Header from './layout/Header';
 import Router from './layout/Router';
 
+import '../assets/styles/scss/layout.scss';
+
 const Layout = () => (
     <div>
         <Helmet
-            title='GG'
+            title='Gretchen Gambill'
             meta={[
                 {
                     name: 'description',
-                    content: 'Personal website of artist Grechen Gambill'
+                    content: 'A Gretchen Gambill Art Portfolio'
                 }
             ]}
         />
         <Header />
-        <Router />
+        <div className="content-container">
+            <Router />
+        </div>
     </div>
 )
 
