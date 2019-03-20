@@ -1,31 +1,31 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 // import style assets here
-import '../../assets/styles/scss/header.scss';
+import "../../assets/styles/scss/header.scss";
 
 class Header extends React.Component {
     render() {
         return (
-            <nav className='nav'>
+            <nav className="nav">
                 <div className="header-container">
                     <div className="nav-elt">
-                        <NavLink to='/'>
+                        <NavLink to="/">
                             Home
                         </NavLink>
                     </div>
                     <div className="nav-elt">
-                        <NavLink to='/about'>
+                        <NavLink to="/about">
                             About
                         </NavLink>
                     </div>
                     <div className="nav-elt">
-                        <NavLink to='/graphicdesign'>
+                        <NavLink to="/graphicdesign">
                             Graphic Design
                         </NavLink>
                     </div>
                     <div className="nav-elt">
-                        <NavLink to='/finearts'>
+                        <NavLink to="/fineart">
                             Fine Arts
                         </NavLink>
                     </div>
