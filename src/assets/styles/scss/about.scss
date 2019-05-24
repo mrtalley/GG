@@ -1,0 +1,27 @@
+.about-container {
+    height: 100vh;
+    font-family: Spectral, serif;
+    font-weight: 300;
+}
+
+.gretchen-image {
+    width: 100%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.gg-logo-container {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 200px;
+}
+
+.gg-logo {
+    width: 100%;
+}
+
+.about-text {
+    margin-bottom: 20px;
+}

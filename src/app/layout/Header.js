@@ -30,7 +30,7 @@ class Header extends React.Component {
                         </NavLink>
                     </div>
                     <div className="nav-elt">
-                        <a target="_blank" href="https://www.instagram.com/free2be_g/">
+                        <a target="_blank" href="https://www.instagram.com/free2be_g/" rel="noopener noreferrer">
                             Instagram
                         </a>
                     </div>
