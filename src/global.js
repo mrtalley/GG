@@ -10,10 +10,20 @@ var config = {
     projectId: "gretchen-gambill",
 };
 
-const firebaseApp = firebase.initializeApp(config);
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const firebaseApp = admin.initializeApp(functions.config().firebase);
 
 // // TODO: tighten permissions on firebase db
 // // TODO: get flamelink working
-const flamelinkInstance = flamelink({ firebaseApp });
+const flamelinkInstance = flamelink({ firebaseApp, isAdminApp: true });
 
-export { flamelinkInstance }
+function renderImages(contentToLoad) {
+    exports.addMessage = functions.https.onRequest((req, res) => {
+        return flamelinkInstance.content.get(contentToLoad)
+            .then(images => res.status(200).json({ images }))
+            .error(error => res.status(500).json({ error }));
+    })
+}
+
+export { flamelinkInstance, renderImages }

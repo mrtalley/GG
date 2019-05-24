@@ -1,7 +1,7 @@
 import React from "react";
 import PhotoGrid from "./layout/PhotoGrid";
 import LoadingImages from "./layout/LoadingImages";
-import { flamelinkInstance } from "../global.js";
+import { flamelinkInstance, renderImages } from "../global.js";
 
 // Styles
 import "../assets/styles/scss/home.scss";
@@ -17,6 +17,9 @@ class Home extends React.Component {
 
         // TODO: this will eventually need to be the schema
         // where you store the home images
+
+        console.log(renderImages("images"));
+
         flamelinkInstance.content.get("images")
             .then(images => {
                 this.setState({ images: images });
