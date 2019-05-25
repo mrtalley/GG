@@ -26,7 +26,7 @@ class Header extends React.Component {
                     </div>
                     <div className="nav-elt">
                         <NavLink to="/fineart">
-                            Fine Arts
+                            Fine Art
                         </NavLink>
                     </div>
                     <div className="nav-elt">

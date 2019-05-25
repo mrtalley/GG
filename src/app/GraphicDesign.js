@@ -3,6 +3,9 @@ import PhotoGrid from "./layout/PhotoGrid";
 import LoadingImages from "./layout/LoadingImages";
 import { flamelinkInstance } from "../global.js";
 
+// Scss
+import '../assets/styles/scss/graphic-design.scss'
+
 class GraphicDesign extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +21,9 @@ class GraphicDesign extends React.Component {
     render() {
         return (
             <div>
-                Graphic Design Page
+                <div className='graphic-design-title'>
+                    Graphic Design
+                </div>
                 <PhotoGrid images={this.state.images} />
                 {this.state.images.length !== 0 ?
                     <PhotoGrid images={this.state.images} /> : <LoadingImages />}

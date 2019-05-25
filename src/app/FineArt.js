@@ -3,6 +3,9 @@ import PhotoGrid from "./layout/PhotoGrid";
 import LoadingImages from "./layout/LoadingImages";
 import { flamelinkInstance } from "../global.js";
 
+// Scss
+import '../assets/styles/scss/fine-art.scss';
+
 class FineArt extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +21,9 @@ class FineArt extends React.Component {
     render() {
         return (
             <div>
-                Fine Art Page
+                <div className='fine-art-title'>
+                    Fine Art
+                </div>
                 <PhotoGrid images={this.state.images} />
                 {this.state.images.length !== 0 ?
                     <PhotoGrid images={this.state.images} /> : <LoadingImages />}

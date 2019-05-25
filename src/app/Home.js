@@ -13,7 +13,13 @@ import fullName from "../assets/images/full-name-logo-nopadding.svg";
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { images: [] };
+        this.state = { images: [], homeText: null, };
+
+        flamelinkInstance.content.get("home")
+            .then(data => {
+                this.setState({ homeText: data.homeText });
+            })
+            .catch(error => console.log("something bad happened :-(\n", error));
 
         // TODO: this will eventually need to be the schema
         // where you store the home images
@@ -33,7 +39,7 @@ class Home extends React.Component {
                 </div>
                 <div className="home-text-container">
                     <div className="home-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                        {this.state.homeText}
                     </div>
                 </div>
                 {this.state.images.length !== 0 ?
