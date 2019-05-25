@@ -5,5 +5,4 @@
 `npm run build`
 
 ## Commonly Used Resources
----
 * [Firebase CLI docs](https://firebase.google.com/docs/cli/)
