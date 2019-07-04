@@ -19,7 +19,9 @@ class Home extends React.Component {
             .then(data => {
                 this.setState({ homeText: data.homeText });
             })
-            .catch(error => console.log("something bad happened :-(\n", error));
+            .catch(error =>
+                console.log("something bad happened :-(\n", error)
+            );
 
         // TODO: this will eventually need to be the schema
         // where you store the home images
@@ -34,8 +36,8 @@ class Home extends React.Component {
         return (
             <div>
                 <div className="home-header-container">
-                    <img src={initials} className="initials-logo" alt="Initials Logo" />
-                    <img src={fullName} className="full-name-logo" alt="Full Name Logo" />
+                    <img src={ initials } className="initials-logo" alt="Initials Logo" />
+                    <img src={ fullName } className="full-name-logo" alt="Full Name Logo" />
                 </div>
                 <div className="home-text-container">
                     <div className="home-text">
@@ -43,7 +45,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 {this.state.images.length !== 0 ?
-                    <PhotoGrid images={this.state.images} /> : <LoadingImages />}
+                    <PhotoGrid images={ this.state.images } /> : <LoadingImages />}
             </div>
         );
     }

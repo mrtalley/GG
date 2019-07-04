@@ -31,16 +31,16 @@ class About extends React.Component {
     render() {
         return (
             <div className='about-container'>
-                <img className='gretchen-image' src={this.state.aboutImage} alt='sexy-gg' />
+                <img className='gretchen-image' src={ this.state.aboutImage } alt='sexy-gg' />
                 <div className='gg-logo-container'>
-                    <img className='gg-logo' src={fullName} alt='Gretchen Gambill' />
+                    <img className='gg-logo' src={ fullName } alt='Gretchen Gambill' />
                 </div>
                 <div className='about-text'>
-                    Hi! My name is Gretchen Gambill. I’m a graphic designer and fine artist. I’m originally from the Kansas City area, but in 2019, after spending some time in Thailand, I decided to move to Vietnam.
+                    { this.state.aboutText }
                 </div>
                 <div className='about-contact'>
                     Contact <br />
-                    {this.state.email}
+                    { this.state.email }
                     <br /><br />
                     Etsy <br />
                     <a href='https://www.etsy.com/shop/GAMBILLART' target='_blank' rel='noopener noreferrer'>https://www.etsy.com/shop/GAMBILLART</a>
