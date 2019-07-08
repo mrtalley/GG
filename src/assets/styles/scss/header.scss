@@ -1,6 +1,6 @@
 body {
     all: unset;
-    font-family: Spectral, serif;
+    font-family: ambroise-firmin-std, serif;
     font-weight: 300;
 }
 
@@ -21,8 +21,9 @@ a {
     flex-wrap: nowrap;
     justify-content: space-around;
     padding: 1rem 0;
-    color: #F0DB9F;
+    color: #6A7F9A;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
 @media screen and (min-width: 500px) {
