@@ -13,9 +13,15 @@ class PhotoGrid extends React.Component {
         photoList = [];
 
         for (i = 0; i < imageArray.length; i++) {
-            let curImage = imageArray[i];
+            let image = imageArray[i];
             photoList.push(
-                <Photo src={curImage.imageLink} subtitle={curImage.subtitle} alt={curImage.alt} key={i} />
+                <Photo
+                    src={ image.imageLink }
+                    subtitle={ image.subtitle }
+                    materials={ image.materials }
+                    alt={ image.subtitle }
+                    key={ i }
+                />
             );
         }
     }
