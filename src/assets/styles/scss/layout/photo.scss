@@ -1,5 +1,3 @@
-// @import 'definitons';
-
 .responsive-image {
   max-width: 100%;
 }
@@ -15,6 +13,12 @@
 .subtitle {
   text-align: center;
   margin-top: 1rem;
+}
+
+.materials {
+  font-family: warnock-pro, serif;
+  text-align: center;
+  margin-top: .25rem;
 }
 
 @media screen and (min-width: 600px) {
