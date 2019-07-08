@@ -44,8 +44,8 @@ class Home extends React.Component {
                         {this.state.homeText}
                     </div>
                 </div>
-                {this.state.images.length !== 0 ?
-                    <PhotoGrid images={ this.state.images } /> : <LoadingImages />}
+                {/* {this.state.images.length !== 0 ?
+                    <PhotoGrid images={ this.state.images } /> : <LoadingImages />} */}
             </div>
         );
     }
