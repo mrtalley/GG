@@ -13,12 +13,14 @@
 .subtitle {
   text-align: center;
   margin-top: 1rem;
+  text-transform: uppercase;
 }
 
 .materials {
   font-family: warnock-pro, serif;
   text-align: center;
   margin-top: .25rem;
+  text-transform: lowercase;
 }
 
 @media screen and (min-width: 600px) {

@@ -8,10 +8,10 @@ class Photo extends React.Component {
             <div className='cell'>
                 <img src={ this.props.src } className='responsive-image lozad' alt={ this.props.alt } />
                 <div className='subtitle'>
-                    { this.props.subtitle.toUpperCase() }
+                    { this.props.subtitle }
                 </div>
                 <div className='materials'>
-                    { this.props.materials.toLowerCase() }
+                    { this.props.materials }
                 </div>
             </div>
         );
