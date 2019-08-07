@@ -11,7 +11,11 @@ class FineArt extends React.Component {
         super(props);
         this.state = { images: [] };
 
-        flamelinkInstance.content.get("fineArt")
+        this.loadImages();
+    }
+
+    async loadImages() {
+        await flamelinkInstance.content.get("fineArt")
             .then(images => {
                 this.setState({ images: images });
             })

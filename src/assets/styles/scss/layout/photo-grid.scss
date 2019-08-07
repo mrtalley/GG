@@ -1,5 +1,16 @@
+.fine-art-subtitle {
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 @media screen and (min-width: 600px) {
-  .grid {
+  .fine-art-photos {
     display: flex;
     flex: {
       wrap: wrap;
