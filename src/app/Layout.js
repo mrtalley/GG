@@ -9,7 +9,7 @@ import '../assets/styles/scss/layout.scss';
 const Layout = () => (
     <div className='background'>
         <Helmet
-            title='Gretchen Gambill'
+            title='GAMBILLART'
             meta={[
                 {
                     name: 'description',
