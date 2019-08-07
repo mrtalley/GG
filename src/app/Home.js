@@ -1,6 +1,4 @@
 import React from "react";
-import PhotoGrid from "./layout/PhotoGrid";
-import LoadingImages from "./layout/LoadingImages";
 import { flamelinkInstance } from "../global.js";
 
 // Styles
@@ -22,14 +20,6 @@ class Home extends React.Component {
             .catch(error =>
                 console.log("something bad happened :-(\n", error)
             );
-
-        // TODO: this will eventually need to be the schema
-        // where you store the home images
-        flamelinkInstance.content.get("images")
-            .then(images => {
-                this.setState({ images: images });
-            })
-            .catch(error => console.log("something bad happened :-(\n", error));
     }
 
     render() {
@@ -44,8 +34,6 @@ class Home extends React.Component {
                         {this.state.homeText}
                     </div>
                 </div>
-                {/* {this.state.images.length !== 0 ?
-                    <PhotoGrid images={ this.state.images } /> : <LoadingImages />} */}
             </div>
         );
     }
