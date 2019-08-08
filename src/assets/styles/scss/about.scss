@@ -7,8 +7,9 @@
 .gretchen-image {
     width: 100%;
     display: flex;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 20px auto auto auto;
+    max-width: 500px;
+
 }
 
 .gg-logo-container {
@@ -16,6 +17,7 @@
     margin-right: auto;
     margin-left: auto;
     max-width: 200px;
+    margin: 40px auto;
 }
 
 .gg-logo {

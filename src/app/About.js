@@ -16,7 +16,11 @@ class About extends React.Component {
             email: null,
         };
 
-        flamelinkInstance.content.get("about")
+        this.loadCMSData();
+    }
+
+    async loadCMSData() {
+        await flamelinkInstance.content.get("about")
             .then(data => {
                 console.log(data);
                 this.setState({
