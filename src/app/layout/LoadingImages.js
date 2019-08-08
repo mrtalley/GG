@@ -1,9 +1,19 @@
 import React from "react";
 
+// Scss
+import '../../assets/styles/scss/layout/loading.scss';
+import '../../assets/styles/scss/reusable/spinner.scss';
+
+// Components
+import Spinner from '../reusable/spinner';
+
 class LoadingImages extends React.Component {
     render() {
         return (
-            <div>Loading images...</div>
+            <div className='loading'>
+                <Spinner />
+                Loading images...
+            </div>
         );
     }
 }

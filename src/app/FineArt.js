@@ -19,7 +19,7 @@ class FineArt extends React.Component {
             .then(images => {
                 this.setState({ images: images });
             })
-            .catch(error => console.log("something bad happened :-(\n", error));
+            .catch(error => console.error("something bad happened :-(\n", error));
     }
 
     render() {
@@ -28,9 +28,8 @@ class FineArt extends React.Component {
                 <div className='fine-art-title'>
                     Fine Art
                 </div>
-                <PhotoGrid images={this.state.images} />
-                {this.state.images.length !== 0 ?
-                    <PhotoGrid images={this.state.images} /> : <LoadingImages />}
+                { this.state.images.length !== 0 ?
+                    <PhotoGrid images={ this.state.images } /> : <LoadingImages /> }
             </div>
         );
     }

@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import Header from './layout/Header';
 import Router from './layout/Router';
 
+// Scss
 import '../assets/styles/scss/layout.scss';
 
 const Layout = () => (
