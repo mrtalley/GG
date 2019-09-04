@@ -15,6 +15,9 @@ class FineArt extends React.Component {
     }
 
     async loadImages() {
+        // TODO maybe render these in cloud functions and call them individually.
+        // Lazy loading isn't working and I think it's because all images are
+        // loaded at once
         await flamelinkInstance.content.get("fineArt")
             .then(images => {
                 this.setState({ images: images });

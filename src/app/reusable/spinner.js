@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Spinner = () => (
-    <div class="spinner">
-        <div class="cube1"></div>
-        <div class="cube2"></div>
+    <div className="spinner">
+        <div className="cube1"></div>
+        <div className="cube2"></div>
     </div>
 );
 
