@@ -22,7 +22,6 @@ class About extends React.Component {
     async loadCMSData() {
         await flamelinkInstance.content.get("about")
             .then(data => {
-                console.log(data);
                 this.setState({
                     aboutImage: data.imageLink,
                     aboutText: data.aboutText,
@@ -43,10 +42,14 @@ class About extends React.Component {
                     { this.state.aboutText }
                 </div>
                 <div className='about-contact'>
-                    Contact <br />
+                    <div className='about-contact-heading'>
+                        Contact <br />
+                    </div>
                     { this.state.email }
                     <br /><br />
-                    Etsy <br />
+                    <div className='about-contact-heading'>
+                        Etsy <br />
+                    </div>
                     <a href='https://www.etsy.com/shop/GAMBILLART' target='_blank' rel='noopener noreferrer'>https://www.etsy.com/shop/GAMBILLART</a>
                 </div>
             </div>

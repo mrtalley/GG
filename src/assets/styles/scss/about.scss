@@ -1,3 +1,7 @@
+$center-width: 500px;
+$center-width-text: 200px;
+
+
 .about-container {
     font-family: Spectral, serif;
     font-weight: 300;
@@ -8,15 +12,14 @@
     width: 100%;
     display: flex;
     margin: 20px auto auto auto;
-    max-width: 500px;
-
+    max-width: $center-width;
 }
 
 .gg-logo-container {
     display: flex;
     margin-right: auto;
     margin-left: auto;
-    max-width: 200px;
+    max-width: $center-width-text;
     margin: 40px auto;
 }
 
@@ -26,4 +29,22 @@
 
 .about-text {
     margin-bottom: 20px;
+    text-align: center;
+    font-family: warnock-pro, serif;
+    max-width: $center-width;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.about-contact {
+    text-align: center;
+    margin: auto;
+}
+
+.about-contact-heading {
+    text-transform: uppercase;
+    color: #842B35;
+    font-family: ambroise-firmin-std, sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
 }
