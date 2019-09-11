@@ -1,0 +1,10 @@
+name: Build and deploy code to Firebase hosting
+on: push
+jobs:
+  name: Build and deploy action
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@master
+  - uses: ./build-deploy-action
+    env:
+      FIREBASE_AUTH_TOKEN: $ {{ secrets.FIREBASE_AUTH_TOKEN }}
