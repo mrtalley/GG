@@ -1,5 +1,8 @@
 #!/bin/sh -l
 
+echo "Installing dependencies"
+sh -c "npm install"
+
 echo "Building production release"
 sh -c "npm run build"
 
