@@ -6,55 +6,69 @@ import '../../assets/styles/scss/layout/photo-grid.scss';
 class PhotoGrid extends React.Component {
     constructor(props) {
         super(props);
-        let i, j;
+
+        this.formatImages = this.formatImages.bind(this);
+
+        this.state = {
+            list: null
+        }
+    }
+
+    formatImages() {
         let imageArray = Object.values(this.props.images);
-        this.photoList = [];
-        let curType = "";
-        this.types = [];
-        this.sections = [];
 
-        for(i = 0; i < imageArray.length; i++) {
-            curType = imageArray[i].type;
-            this.types.push(curType);
+        let photos = [];
+        let photoKey = 0;
 
-            for(j = i; j < imageArray.length; j++) {
-                let image = imageArray[j];
+        let photoSections = [];
+        let photoSectionKey = 0;
 
-                if(curType !== image.type) {
-                    break;
-                }
-
-                this.photoList.push(
-                    <Photo
-                        src={image.imageLink}
-                        subtitle={image.subtitle}
-                        materials={image.materials}
-                        alt={image.subtitle}
-                        key={j}
-                    />
-                );
+        for (let image of imageArray) {
+            if (photos[image.type] === undefined) {
+                photos[image.type] = [];
             }
 
-            this.sections.push(
-                <div className='fine-art-section' key={i}>
+            photos[image.type].push(
+                <Photo
+                    src={image.imageLink}
+                    subtitle={image.subtitle}
+                    materials={image.materials}
+                    alt={image.subtitle}
+                    key={photoKey++}
+                />
+            );
+        }
+
+        for (let photoGroup in photos) {
+            const group = photos[photoGroup];
+
+            photoSections.push(
+                <div className='fine-art-section' key={photoSectionKey++}>
                     <div className='fine-art-subtitle'>
-                        { curType }
+                        {photoGroup}
                     </div>
                     <div className='fine-art-photos'>
-                        { this.photoList }
+                        {group}
                     </div>
                 </div>
             );
-
-            this.photoList = [];
-            i = j;
         }
+
+        return photoSections;
+    }
+
+    componentDidMount() {
+        const imageGrid = this.formatImages();
+
+        this.setState({
+            list: imageGrid
+        })
     }
 
     render() {
         return (
             <div className="grid">
-                { this.sections }
+                { this.state.list }
             </div>
         );
     }
