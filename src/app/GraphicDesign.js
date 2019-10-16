@@ -10,23 +10,33 @@ class GraphicDesign extends React.Component {
     constructor(props) {
         super(props);
         this.state = { images: [] };
+    }
 
-        flamelinkInstance.content.get("graphicDesign")
+    async loadImages() {
+        await flamelinkInstance.content.get("graphicDesign")
             .then(images => {
                 this.setState({ images: images });
             })
             .catch(error => console.log("something bad happened :-(\n", error));
     }
 
+    componentDidMount() {
+        this.loadImages();
+    }
+
     render() {
+        const { images } = this.state;
+
         return (
             <div>
                 <div className='graphic-design-title'>
                     Graphic Design
                 </div>
-                <PhotoGrid images={this.state.images} />
-                {this.state.images.length !== 0 ?
-                    <PhotoGrid images={this.state.images} /> : <LoadingImages />}
+                {
+                    images.length !== 0 ?
+                        <PhotoGrid images={images} />
+                        : <LoadingImages />
+                }
             </div>
         );
     }

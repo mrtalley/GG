@@ -10,8 +10,6 @@ class FineArt extends React.Component {
     constructor(props) {
         super(props);
         this.state = { images: [] };
-
-        this.loadImages();
     }
 
     async loadImages() {
@@ -22,14 +20,23 @@ class FineArt extends React.Component {
             .catch(error => console.error("something bad happened :-(\n", error));
     }
 
+    componentDidMount() {
+        this.loadImages();
+    }
+
     render() {
+        const { images } = this.state;
+
         return (
             <div>
                 <div className='fine-art-title'>
                     Fine Art
                 </div>
-                { this.state.images.length !== 0 ?
-                    <PhotoGrid images={ this.state.images } /> : <LoadingImages /> }
+                {
+                    images.length !== 0 ?
+                        <PhotoGrid images={ images } />
+                        : <LoadingImages />
+                }
             </div>
         );
     }

@@ -15,7 +15,6 @@ class Tattoos extends React.Component {
     async loadImages() {
         await flamelinkInstance.content.get("tattoos")
             .then(images => {
-                console.info(images);
                 this.setState({ images: images });
             })
             .catch(error => console.error("something bad happened :-(\n", error));

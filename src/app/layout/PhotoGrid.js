@@ -45,10 +45,14 @@ class PhotoGrid extends React.Component {
             photoSections.push(
                 <div className='fine-art-section' key={photoSectionKey++}>
                     <div className='grid-subtitle'>
-                        {photoGroup}
+                        {
+                            photoGroup !== 'undefined' ?
+                                photoGroup
+                                : <div></div>
+                        }
                     </div>
                     <div className='grid-photos'>
-                        {group}
+                        { group }
                     </div>
                 </div>
             );
@@ -66,9 +70,11 @@ class PhotoGrid extends React.Component {
     }
 
     render() {
+        const { list } = this.state;
+
         return (
             <div className="grid">
-                { this.state.list }
+                { list }
             </div>
         );
     }
