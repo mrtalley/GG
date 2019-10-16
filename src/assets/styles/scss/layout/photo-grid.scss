@@ -1,4 +1,4 @@
-.fine-art-subtitle {
+.grid-subtitle {
   &:first-child {
     margin-top: 20px;
   }
@@ -11,7 +11,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .fine-art-photos {
+  .grid-photos {
     display: flex;
     flex: {
       wrap: wrap;

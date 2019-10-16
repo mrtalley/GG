@@ -44,10 +44,10 @@ class PhotoGrid extends React.Component {
 
             photoSections.push(
                 <div className='fine-art-section' key={photoSectionKey++}>
-                    <div className='fine-art-subtitle'>
+                    <div className='grid-subtitle'>
                         {photoGroup}
                     </div>
-                    <div className='fine-art-photos'>
+                    <div className='grid-photos'>
                         {group}
                     </div>
                 </div>
