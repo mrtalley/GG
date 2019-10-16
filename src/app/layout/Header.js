@@ -30,6 +30,11 @@ class Header extends React.Component {
                         </NavLink>
                     </div>
                     <div className="nav-elt">
+                        <NavLink to="/tattoos">
+                            Tattoos
+                        </NavLink>
+                    </div>
+                    <div className="nav-elt">
                         <a target="_blank" href="https://www.etsy.com/shop/GAMBILLART" rel="noopener noreferrer">
                             Etsy
                         </a>

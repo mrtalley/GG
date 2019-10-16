@@ -5,6 +5,7 @@ import Home from '../Home';
 import About from '../About';
 import GraphicDesign from '../GraphicDesign';
 import FineArt from '../FineArt';
+import Tattoos from '../Tattoos';
 
 const Router = () => (
     <Switch>
@@ -12,6 +13,7 @@ const Router = () => (
         <Route path='/about' component={About} />
         <Route path='/graphicdesign' component={GraphicDesign} />
         <Route path='/fineart' component={FineArt} />
+        <Route path='/tattoos' component={Tattoos} />
     </Switch>
 );
 
