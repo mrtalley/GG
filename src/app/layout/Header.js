@@ -34,11 +34,11 @@ class Header extends React.Component {
                             Tattoos
                         </NavLink>
                     </div>
-                    <div className="nav-elt">
+                    {/* <div className="nav-elt">
                         <a target="_blank" href="https://www.etsy.com/shop/GAMBILLART" rel="noopener noreferrer">
                             Etsy
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </nav>
         )

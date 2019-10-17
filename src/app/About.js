@@ -1,5 +1,5 @@
 import React from 'react';
-import { flamelinkInstance } from "../global.js";
+import { flamelinkInstance, analytics } from "../global.js";
 
 // Images
 import fullName from "../assets/images/full-name-logo-nopadding.svg";
@@ -15,11 +15,9 @@ class About extends React.Component {
             aboutText: null,
             email: null,
         };
-
-        this.loadCMSData();
     }
 
-    async loadCMSData() {
+    async loadAboutData() {
         await flamelinkInstance.content.get("about")
             .then(data => {
                 this.setState({
@@ -31,12 +29,17 @@ class About extends React.Component {
             .catch(error => console.log("something bad happened :-(\n", error));
     }
 
+    componentDidMount() {
+        this.loadAboutData();
+        analytics.logEvent('About page');
+    }
+
     render() {
         return (
             <div className='about-container'>
-                <img className='gretchen-image' src={ this.state.aboutImage } alt='sexy-gg' />
+                <img className='gretchen-image' src={ this.state.aboutImage } alt='Gretchen Gambill Portrait' />
                 <div className='gg-logo-container'>
-                    <img className='gg-logo' src={ fullName } alt='Gretchen Gambill' />
+                    <img className='gg-logo' src={ fullName } alt='Gretchen Gambill Signature' />
                 </div>
                 <div className='about-text'>
                     { this.state.aboutText }

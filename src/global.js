@@ -1,4 +1,6 @@
-import * as firebase from 'firebase';
+import firebase from '@firebase/app';
+import '@firebase/analytics';
+import '@firebase/database';
 import flamelink from 'flamelink';
 
 // Initialize Firebase
@@ -8,12 +10,16 @@ var config = {
     databaseURL: 'https://gretchen-gambill.firebaseio.com/',
     storageBucket: 'gretchen-gambill.appspot.com',
     projectId: "gretchen-gambill",
+    messagingSenderId: "626045632551",
+    appId: "1:626045632551:web:7c6c10ff93c87c8b",
+    measurementId: "G-GSLE5B67DN"
 };
 
 const firebaseApp = firebase.initializeApp(config);
 
-// // TODO: tighten permissions on firebase db
-// // TODO: get flamelink working
 const flamelinkInstance = flamelink({ firebaseApp });
 
-export { flamelinkInstance }
+// Initialize Firebase Analytics
+const analytics = firebase.analytics(firebaseApp);
+
+export { flamelinkInstance, analytics }
