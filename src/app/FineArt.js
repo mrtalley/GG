@@ -1,7 +1,7 @@
 import React from "react";
 import PhotoGrid from "./layout/PhotoGrid";
 import LoadingImages from "./layout/LoadingImages";
-import { flamelinkInstance } from "../global.js";
+import { flamelinkInstance, analytics } from "../global.js";
 
 // Scss
 import '../assets/styles/scss/fine-art.scss';
@@ -22,6 +22,7 @@ class FineArt extends React.Component {
 
     componentDidMount() {
         this.loadImages();
+        analytics.logEvent('Fine Art page');
     }
 
     render() {
