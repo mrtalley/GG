@@ -1,10 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { analytics } from "../../global.js";
 
 // import style assets here
 import "../../assets/styles/scss/header.scss";
 
 class Header extends React.Component {
+    handleClick() {
+        analytics.logEvent('etsy');
+    }
+
     render() {
         return (
             <nav className="nav">
@@ -34,11 +39,11 @@ class Header extends React.Component {
                             Tattoos
                         </NavLink>
                     </div>
-                    {/* <div className="nav-elt">
+                    <div className="nav-elt" onClick={this.handleClick}>
                         <a target="_blank" href="https://www.etsy.com/shop/GAMBILLART" rel="noopener noreferrer">
                             Etsy
                         </a>
-                    </div> */}
+                    </div>
                 </div>
             </nav>
         )
