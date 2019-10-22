@@ -1,10 +1,11 @@
-import React from "react";
-import PhotoGrid from "./layout/PhotoGrid";
-import LoadingImages from "./layout/LoadingImages";
-import { flamelinkInstance, analytics } from "../global.js";
+import React from 'react';
+import PhotoGrid from './layout/PhotoGrid';
+import LoadingImages from './layout/LoadingImages';
+
+import { flamelinkInstance, analytics } from '../global.js';
 
 // Scss
-import '../assets/styles/scss/graphic-design.scss'
+import '../assets/styles/scss/graphic-design.scss';
 
 class GraphicDesign extends React.Component {
     constructor(props) {
@@ -13,11 +14,11 @@ class GraphicDesign extends React.Component {
     }
 
     async loadImages() {
-        await flamelinkInstance.content.get("graphicDesign")
+        flamelinkInstance.content.get('graphicDesign')
             .then(images => {
                 this.setState({ images: images });
             })
-            .catch(error => console.log("something bad happened :-(\n", error));
+            .catch(error => console.log('Error loading Graphic Design CMS Content\n', error));
     }
 
     componentDidMount() {

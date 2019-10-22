@@ -1,7 +1,8 @@
-import React from "react";
-import PhotoGrid from "./layout/PhotoGrid";
-import LoadingImages from "./layout/LoadingImages";
-import { flamelinkInstance, analytics } from "../global.js";
+import React from 'react';
+import PhotoGrid from './layout/PhotoGrid';
+import LoadingImages from './layout/LoadingImages';
+
+import { flamelinkInstance, analytics } from '../global.js';
 
 // Scss
 import '../assets/styles/scss/fine-art.scss';
@@ -13,11 +14,11 @@ class FineArt extends React.Component {
     }
 
     async loadImages() {
-        await flamelinkInstance.content.get("fineArt")
+        flamelinkInstance.content.get('fineArt')
             .then(images => {
                 this.setState({ images: images });
             })
-            .catch(error => console.error("something bad happened :-(\n", error));
+            .catch(error => console.error('Error loading Fine Art CMS content\n', error));
     }
 
     componentDidMount() {
@@ -35,7 +36,7 @@ class FineArt extends React.Component {
                 </div>
                 {
                     images.length !== 0 ?
-                        <PhotoGrid images={ images } />
+                        <PhotoGrid images={images} />
                         : <LoadingImages />
                 }
             </div>

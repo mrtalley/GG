@@ -1,8 +1,9 @@
 import React from 'react';
-import { flamelinkInstance, analytics } from "../global.js";
+
+import { flamelinkInstance, analytics } from '../global.js';
 
 // Images
-import fullName from "../assets/images/full-name-logo-nopadding.svg";
+import fullName from '../assets/images/full-name-logo-nopadding.svg';
 
 // Scss
 import '../assets/styles/scss/about.scss';
@@ -18,7 +19,7 @@ class About extends React.Component {
     }
 
     async loadAboutData() {
-        await flamelinkInstance.content.get("about")
+        flamelinkInstance.content.get('about')
             .then(data => {
                 this.setState({
                     aboutImage: data.imageLink,
@@ -26,7 +27,7 @@ class About extends React.Component {
                     email: data.email
                 });
             })
-            .catch(error => console.log("something bad happened :-(\n", error));
+            .catch(error => console.log('Error loading About CMS content\n', error));
     }
 
     componentDidMount() {
