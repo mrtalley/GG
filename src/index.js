@@ -1,9 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import WebFont from 'webfontloader';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+WebFont.load({
+    custom: {
+        families: [
+            'warnock-pro',
+            'ambroise-firmin-std'
+        ],
+        urls: ['https://use.typekit.net/ssh7edh.css']
+    }
+})
 
 ReactDOM.render((
     <BrowserRouter>
